@@ -1,121 +1,174 @@
-# Autonomous Browser Agent
 
-An AI-powered autonomous browser agent that can plan, execute, and automate web tasks without manual intervention.  
-This project demonstrates web automation, LLM-driven planning, and real-world AI agent design.
+# 🤖 Autonomous Browser Agent
+### LLM-Driven Web Automation & Intelligent Task Execution
 
-## Project Overview
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python">
+<img src="https://img.shields.io/badge/OpenAI-GPT--4-412991?style=for-the-badge&logo=openai">
+<img src="https://img.shields.io/badge/Playwright-Automation-2EAD33?style=for-the-badge&logo=playwright">
+<img src="https://img.shields.io/badge/Framework-AsyncIO-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=for-the-badge">
+</p>
 
-This agent is capable of:
+---
 
-- Understanding natural language instructions  
-- Planning step-by-step actions  
-- Opening a browser, searching, clicking, filling forms, and scraping data  
-- Returning structured results  
+## 🚀 Project Overview
 
-It serves as a foundation for building autonomous AI assistants.
+The **Autonomous Browser Agent** is a sophisticated AI system that bridges the gap between LLM reasoning and web interaction. It interprets natural language commands, breaks them into executable steps, and navigates the live web to achieve complex goals without human oversight.
 
-## Tech Stack
+**Example Task:**
+> "Find the top 3 trending AI news stories today and save a summary of each."
 
-- Python 3.10+
-- OpenAI GPT / Gemini API
-- Playwright for browser automation
-- asyncio and nest_asyncio for async execution
-- Virtualenv or Conda
-- Runs on Windows, macOS, and Linux
+### Core Capabilities:
+- **Natural Language Understanding:** Deciphering intent from complex instructions.
+- **Dynamic Planning:** Creating and adjusting step-by-step action sequences.
+- **Full Browser Control:** Clicking, typing, form-filling, and navigating via Playwright.
+- **Data Extraction:** Scraping and structuring unstructured web data.
 
-## Project Structure
+---
 
-autonomous_browser_agent  
-├── agent  
-│   ├── planner.py  
-│   ├── executor.py  
-│   ├── memory.py  
-│   └── tools.py  
-├── browser  
-│   ├── controller.py  
-│   └── actions.py  
-├── prompts  
-│   └── system_prompt.txt  
-├── logs  
-├── main.py  
-├── requirements.txt  
-└── README.md  
+## 🧠 Tech Stack
 
-## Setup Instructions
+| Category | Tools |
+| :--- | :--- |
+| **Language** | Python 3.10+ |
+| **Orchestration** | Asyncio / Nest_Asyncio |
+| **Brain (LLM)** | OpenAI GPT / Google Gemini |
+| **Automation** | Playwright |
+| **Environment** | Virtualenv / Conda |
+| **OS Support** | Windows, macOS, Linux |
 
-### 1. Clone the Repository
-git clone https://github.com/G-Narendra/autonomous_browser_agent.git
+---
+
+## 📁 Project Structure
+
+```text
+autonomous_browser_agent/
+├── agent/
+│   ├── planner.py        # Task decomposition logic
+│   ├── executor.py       # Action dispatcher
+│   ├── memory.py         # Context & state management
+│   └── tools.py          # LLM tool definitions
+├── browser/
+│   ├── controller.py     # Browser session management
+│   └── actions.py        # Low-level interaction scripts
+├── prompts/
+│   └── system_prompt.txt # Core agent instructions
+├── logs/                 # Execution & error logs
+├── main.py               # Application entry point
+├── requirements.txt      # Project dependencies
+└── README.md             # Documentation
+
+```
+
+
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone [https://github.com/G-Narendra/autonomous_browser_agent.git](https://github.com/G-Narendra/autonomous_browser_agent.git)
 cd autonomous_browser_agent
 
+```
 
+### 2️⃣ Create Virtual Environment
 
-### 2. Create a Virtual Environment
+```bash
 python -m venv venv
 
+```
 
+### 3️⃣ Activate the Environment
 
-### 3. Activate the Environment
-Windows:
+**Windows:**
+
+```bash
 venv\Scripts\activate
 
+```
 
-Mac/Linux:
+**Mac/Linux:**
+
+```bash
 source venv/bin/activate
 
+```
 
+### 4️⃣ Install Dependencies & Playwright
 
-### 4. Install Dependencies
+```bash
 pip install -r requirements.txt
-
-
-
-### 5. Set OpenAI API Key
-Windows:
-setx OPENAI_API_KEY "your_api_key_here"
-
-
-PowerShell:
-$env:OPENAI_API_KEY="your_api_key_here"
-
-
-## Running the Project
-
-python main.py
-
-
-
-The agent will:
-
-- Plan actions for the given task  
-- Execute actions automatically in a browser  
-- Print results in the console  
-- Optionally log activity  
-
-## Notes
-
-- Requires a valid OpenAI API key  
-- Playwright may open GUI browser windows  
-- Install Playwright browsers if needed:
 playwright install
 
+```
 
-- Async execution is handled using asyncio and nest_asyncio  
+### 5️⃣ Set OpenAI API Key
 
-## Example Task
+**Windows (CMD):**
 
-Search for the latest Python 3.12 features and summarize them in bullet points.
+```bash
+setx OPENAI_API_KEY "your_api_key_here"
 
-## Future Improvements
+```
 
-- Full real browser automation  
-- Memory module for multi-step tasks  
-- Error handling and retry logic  
-- Logging and monitoring dashboard  
-- Cloud deployment for continuous autonomous tasks  
+**PowerShell:**
 
-## Author
+```bash
+$env:OPENAI_API_KEY="your_api_key_here"
 
-Narendra (G‑Narendra)  
-AI | ML | Python | Full Stack | GenAI Enthusiast  
+```
 
-GitHub: https://github.com/G-Narendra
+---
+
+## ▶️ Run the Project
+
+```bash
+python main.py
+
+```
+
+**Workflow:**
+
+1. **Planner:** Maps out the necessary steps for the task.
+2. **Controller:** Launches a Playwright browser instance.
+3. **Executor:** Performs real-time clicks, searches, and navigation.
+4. **Output:** Results are logged and printed to the console.
+
+---
+
+## ⚠️ Important Notes
+
+### 🔸 GPU & API
+
+* This agent requires a valid **OpenAI API Key**.
+* Async execution is handled using `asyncio` and `nest_asyncio` for non-blocking operations.
+
+### 🔸 Browser Behavior
+
+* By default, Playwright may open a visible browser window.
+* Ensure you have a stable internet connection for the LLM to process web content live.
+
+---
+
+## 🧪 Example Task
+
+**Input Prompt:** > "Search for the latest Python 3.12 features and summarize them in bullet points."
+
+---
+
+## 🚀 Future Improvements
+
+* [ ] **Advanced Memory:** Persistent storage for multi-session tasks.
+* [ ] **Visual Reasoning:** Using GPT-4V to interpret UI elements visually.
+* [ ] **Error Handling:** Robust retry logic for dynamic website changes.
+* [ ] **UI Dashboard:** Integration with Gradio or Streamlit for monitoring.
+
+---
+
+## 👨‍💻 Author
+
+**Narendra (G‑Narendra)** AI | ML | Python | Full Stack | GenAI Enthusiast
+
+GitHub: [https://github.com/G-Narendra](https://www.google.com/search?q=https://github.com/G-Narendra)
